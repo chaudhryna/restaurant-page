@@ -6,7 +6,9 @@ import logo from './images/tea-house-green-logo.png';
 
 const contentDiv = document.querySelector('#content');
 
-const navbar = document.querySelector('.navbar');
+const navbar = document.createElement('nav');
+navbar.classList.add('navbar');
+
 const logoImg = document.createElement('img');
 logoImg.classList.add('logo');
 logoImg.src = logo;
@@ -37,5 +39,7 @@ navLinks.appendChild(menuLi);
 navLinks.appendChild(contactLi);
 
 navbar.appendChild(navLinks);
+
+contentDiv.insertAdjacentElement('beforebegin', navbar);
 
 contentDiv.appendChild(teaRoomPage());
